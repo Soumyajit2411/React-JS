@@ -1,17 +1,31 @@
-import React from 'react';
+// import React,{Component} from 'react';
 import {dumpLogs} from './Utils';
 // import './BlogCard.css';
 import classes from './BlogCard.module.css';
 
-const BlogCard=(properties)=>{
-  dumpLogs(properties);
-  
-    return(
-      <div className={classes.NewBlogCard}>
-        <h3>{properties.title}</h3>
-        <p>{properties.description}</p>
-      </div>
-    )
+const BlogCard =(props)=>{
+  // state={
+  //   likeCount:0
+  // }
+
+  // onLikeBtnClick=()=>{
+  //   this.setState((prevState,prevProp)=>{
+  //     return{likeCount : prevState.LikeCount+1}
+  //   });
+  // }
+
+  dumpLogs(props);
+
+  return(
+    <div className={classes.NewBlogCard}>
+      <h3>{props.title}</h3>
+      <p>{props.description}</p>
+      <p>Like Count:<span className={classes.LikeCount}>
+      {props.LikeCount}</span></p>
+      <button onClick={props.onLikeBtnClick}>Like</button>
+    </div>
+  )
+
 
 }
 export default BlogCard;

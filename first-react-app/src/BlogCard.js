@@ -1,5 +1,5 @@
 // import React,{Component} from 'react';
-import {dumpLogs} from './Utils';
+//import {dumpLogs} from './Utils';
 // import './BlogCard.css';
 import classes from './BlogCard.module.css';
 
@@ -14,7 +14,7 @@ const BlogCard =(props)=>{
   //   });
   // }
 
-  dumpLogs(props);
+  console.log('BlogCard Rendered');
 
   return(
     <div className={classes.NewBlogCard}>

@@ -25,30 +25,34 @@ class App extends Component {
   detailsInputBox=<input placeholder=
     {this.inputPlaceholder} autoComplete='true'/>;
 
-  state={
-    showBlogs:true,
-    blogArr:[
-      {
-      id:1,
-      title:'React Website1',
-      description:'Soumyajit Roy personal website',
-      LikeCount:0
-      },
-      {
-      id:2,
-      title:'React Website2',
-      description:'Soumyajit Roy personal website',
-      LikeCount:0
-      },
-      {
-      id:3,
-      title:'React Website3',
-      description:'Soumyajit Roy personal website',
-      LikeCount:0
-      }
-    ]
+  constructor(props){
+    super(props);
+    this.state={
+      showBlogs:true,
+      blogArr:[
+        {
+        id:1,
+        title:'React Website1',
+        description:'Soumyajit Roy personal website',
+        LikeCount:0
+        },
+        {
+        id:2,
+        title:'React Website2',
+        description:'Soumyajit Roy personal website',
+        LikeCount:0
+        },
+        {
+        id:3,
+        title:'React Website3',
+        description:'Soumyajit Roy personal website',
+        LikeCount:0
+        }
+      ]
+    }  
+    console.log('Inside constructor');
   }
-
+  
   onHideBtnClick=()=>{
     //let updatedState=!this.state.showBlogs;
     this.setState((prevState,prevProps)=>{
@@ -74,9 +78,11 @@ class App extends Component {
     boxShadow:'0 2px 5px #ccc'
   }
 
+  componentDidMount(){
+    console.log('Mounted');
+  }
   render(){
     console.log('Render called');
-    console.log(this.state);
 
     const BlogCards=myEmpty(this.state.blogArr)?[]:this.state.blogArr.map((item,pos)=>{
   
